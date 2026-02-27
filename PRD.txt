@@ -1,0 +1,650 @@
+================================================================================
+PRODUCT REQUIREMENTS DOCUMENT (PRD)
+HTML-Based Personal Website
+================================================================================
+Project Date: February 27, 2026
+Status: In Development
+
+
+================================================================================
+1. EXECUTIVE SUMMARY
+================================================================================
+
+This PRD outlines the development of a static HTML-based personal website serving
+as a portfolio, bio, and contact hub. The site prioritizes speed, accessibility,
+and ease of maintenance while showcasing professional identity and work samples.
+
+Target Audience: Employers, clients, collaborators, recruiters, and general public.
+Hosting: GitHub Pages / Netlify / Vercel (static hosting)
+Tech Stack: HTML5, CSS3, vanilla JavaScript (minimal)
+
+
+================================================================================
+2. OBJECTIVES
+================================================================================
+
+PRIMARY:
+  - Create a fast, accessible, professional personal website with no dependencies
+  - Showcase portfolio and enable contact / business inquiries
+  - Serve as a hub for professional identity and credibility
+
+SECONDARY:
+  - Improve organic search presence and SEO
+  - Provide simple content update mechanism (hand-authored HTML)
+  - Establish foundation for iterative improvements (blog, projects)
+
+
+================================================================================
+3. SUCCESS METRICS
+================================================================================
+
+PERFORMANCE:
+  - First Contentful Paint (FCP) < 1s on 3G slow-4G emulation
+  - Lighthouse score >= 95 for Performance, Accessibility, Best Practices
+  - Page load time < 2s on mobile connections
+
+ACCESSIBILITY:
+  - WCAG 2.1 AA compliance for all main pages
+  - Keyboard navigable, focus states visible
+  - Alt text on all images; color contrast >= AA
+
+ENGAGEMENT:
+  - Contact form / email link visible and functional
+  - Portfolio projects discoverable within first visit
+  - Bounce rate < 50%
+
+SEO:
+  - Indexed in Google within 2 weeks of launch
+  - Organic search traffic for name and key keywords within 3 months
+  - Meta tags, Open Graph, structured data (JSON-LD) implemented
+
+
+================================================================================
+4. TARGET AUDIENCE & USER PERSONAS
+================================================================================
+
+PERSONA 1: Potential Employer / Recruiter
+  - Primary goal: Evaluate skills, experience, cultural fit
+  - Behavior: Visits from LinkedIn, portfolio links, job searches
+  - Needs: Clear bio, skills, work samples, easy CV access
+
+PERSONA 2: Client / Potential Collaborator
+  - Primary goal: Assess expertise and past work quality
+  - Behavior: Reviews portfolio, reads project descriptions
+  - Needs: Project gallery, tech stack info, case studies, contact method
+
+PERSONA 3: Peer / Collaborator
+  - Primary goal: Connect and collaborate on shared interests
+  - Behavior: Looks for social links, blog, contribution history
+  - Needs: GitHub link, Twitter, blog posts, email contact
+
+PERSONA 4: General Public / Curious Visitor
+  - Primary goal: Learn who you are
+  - Behavior: Casual browsing, may not spend much time
+  - Needs: Engaging intro, clear value proposition, intuitive navigation
+
+
+================================================================================
+5. MVP FEATURES
+================================================================================
+
+CORE PAGES:
+  ✓ Home (index.html)
+    - Hero section with profile image, short intro, primary CTAs
+    - Featured projects preview (3 cards)
+    - Brief about section with link to full About page
+  
+  ✓ About (about.html)
+    - Extended bio and background
+    - Skills organized by category (Languages, Frontend, Backend, Tools)
+    - Experience timeline with key accomplishments
+    - Photo (optional)
+  
+  ✓ Projects / Portfolio (projects.html)
+    - Grid layout of project cards (responsive, 2-3 columns)
+    - Each project card includes: image, title, short description, tech tags, links
+    - Individual project detail pages (optional for MVP)
+  
+  ✓ Resume (resume.html)
+    - Summary of experience and education
+    - Downloadable PDF link
+    - Timeline format for clarity
+  
+  ✓ Contact (contact.html)
+    - Multiple contact methods (email, phone, social links)
+    - Optional contact form (Formspree, Netlify Forms, or simple mailto)
+    - Embedded social media links
+  
+  ✓ Header / Navigation
+    - Logo / name with home link
+    - Sticky navigation bar (responsive)
+    - Links to all main pages
+  
+  ✓ Footer
+    - Social links (GitHub, LinkedIn, Twitter, email)
+    - Copyright notice
+    - Simple site map
+
+DESIGN & UX:
+  ✓ Responsive, mobile-first layout
+  ✓ Neutral, professional color scheme
+  ✓ Clear visual hierarchy with typography
+  ✓ Generous white space and padding
+  ✓ Smooth scroll behavior
+  ✓ Hover states on interactive elements
+  ✓ Accessible forms with proper labels
+
+
+================================================================================
+6. POST-MVP FEATURES (Phase 2+)
+================================================================================
+
+  - Blog section with markdown-to-HTML pipeline (optional generator like 11ty)
+  - Searchable blog with tags and categories
+  - RSS feed for blog posts
+  - Case study detail pages for select projects
+  - Dark mode toggle (CSS variables support ready)
+  - Analytics dashboard integration
+  - Light CMS (Netlify CMS, Forestry.io) for non-technical updates
+  - Internationalization (i18n) support
+  - Comments or interaction features (optional)
+  - Email newsletter signup
+
+
+================================================================================
+7. CONTENT REQUIREMENTS
+================================================================================
+
+PROFILE & IDENTITY:
+  - High-quality profile photo / avatar (200+ px, optimized)
+  - Professional headshot or stylized illustration
+  - Short elevator pitch (1-2 lines)
+  - Social media links with verification
+
+ABOUT SECTION:
+  - 200-300 word bio covering: background, expertise, values, interests
+  - List of 8-15 key skills across multiple categories
+  - 3-5 highlighted work experiences with dates and achievements
+
+PORTFOLIO:
+  - 4-8 featured projects with:
+    - Title and short description (1-2 lines)
+    - Project screenshot or hero image (800+ px wide, optimized)
+    - Technology stack (3-5 tags)
+    - Links to live demo and/or GitHub repo
+    - Optional: longer project case study
+
+RESUME:
+  - PDF format (1-2 pages)
+  - Summary, experience (3-5 roles), education, certifications, skills
+  - Quantifiable achievements where possible
+
+CONTACT:
+  - Primary email address
+  - Phone number (optional)
+  - Physical location (city/region only, optional)
+  - Social media profiles (GitHub, LinkedIn, Twitter, etc.)
+
+
+================================================================================
+8. INFORMATION ARCHITECTURE
+================================================================================
+
+ROOT DIRECTORY:
+  /                           → index.html (Home)
+  /about.html                 → About page
+  /projects.html              → Projects / Portfolio listing
+  /projects/<slug>.html       → Individual project detail (future)
+  /resume.html                → Resume summary
+  /contact.html               → Contact form and links
+  /404.html                   → Error page
+  /css/style.css              → Main stylesheet
+  /js/main.js                 → Minimal JavaScript (optional)
+  /images/                    → Image assets (photos, icons, project screenshots)
+  /blog/                      → Blog section (future)
+    /index.html               → Blog listing
+    /<slug>.html              → Individual blog post
+
+SITEMAP:
+  /sitemap.xml                → XML sitemap for search engines
+  /robots.txt                 → Robot directives
+
+
+================================================================================
+9. DESIGN & USER EXPERIENCE
+================================================================================
+
+LAYOUT & RESPONSIVE DESIGN:
+  - Mobile-first approach: develop for small screens first
+  - Breakpoints: 480px (mobile), 768px (tablet), 1200px (desktop)
+  - Fluid spacing using CSS variables and percentage-based widths
+  - Flexible grid layouts (CSS Grid, Flexbox)
+
+VISUAL DESIGN:
+  - Color Palette:
+    - Background: #fafafa (light gray)
+    - Text: #1a1a1a (dark text)
+    - Accent: #0066cc (blue for links/CTAs)
+    - Borders: #e0e0e0 (light gray)
+  - Typography:
+    - Font Family: System fonts (-apple-system, Segoe UI, Roboto)
+    - H1: 2.5-3rem, bold, line-height 1.2
+    - Body: 16px, line-height 1.6
+    - Generous letter-spacing and line-height for readability
+  - Spacing:
+    - Consistent spacing scale: 0.5rem, 1rem, 1.5rem, 2rem, 3rem
+    - Padding and margins aligned to 8px baseline
+
+INTERACTIONS & FEEDBACK:
+  - Hover states on links (#0052a3 for links, underline on hover)
+  - Button hover effects (color change, subtle shadow)
+  - Card hover: slight shadow lift and transform
+  - Form inputs: focus ring with accent color
+  - Smooth transitions (0.3s ease) on interactive elements
+  - Visible focus states for keyboard navigation
+
+NAVIGATION:
+  - Persistent top navigation (sticky or fixed)
+  - Simple menu: Home, About, Projects, Resume, Contact
+  - Mobile-friendly: consider hamburger menu if needed
+  - Footer navigation with secondary links
+
+
+================================================================================
+10. ACCESSIBILITY (WCAG 2.1 AA)
+================================================================================
+
+SEMANTIC HTML:
+  - Use proper heading hierarchy (H1 once per page, H2+ for sections)
+  - Semantic elements: <header>, <main>, <section>, <footer>, <nav>, <article>
+  - No div-soup; use HTML5 structural elements
+
+KEYBOARD NAVIGATION:
+  - All interactive elements accessible via Tab key
+  - Logical tab order (left-to-right, top-to-bottom)
+  - Visible focus indicators (outline or ring)
+  - Skip links to main content (optional but recommended)
+
+SCREEN READER SUPPORT:
+  - Alt text on all images (descriptive, not just filename)
+  - Form labels properly associated with inputs
+  - ARIA labels/descriptions only when necessary (prefer semantic HTML)
+  - List structures for navigation and content lists
+  - Role attributes only when semantics don't exist
+
+COLOR & CONTRAST:
+  - Text color contrast >= 4.5:1 (AA standard)
+  - Buttons and interactive elements >= 3:1
+  - Don't rely solely on color to convey information
+
+FORMS:
+  - All inputs have associated <label> elements
+  - Inline error messages with color + icon/text
+  - Clear required field indicators
+  - Sufficient padding and clickable areas (min 44x44px)
+
+
+================================================================================
+11. PERFORMANCE OPTIMIZATION
+================================================================================
+
+IMAGE OPTIMIZATION:
+  - Use modern formats: WebP with JPEG fallback
+  - Responsive images: srcset for different screen sizes
+  - Lazy loading for below-fold images
+  - Optimize dimensions before upload (max 1200px wide for web)
+  - Compress with tools: TinyPNG, ImageOptim, Squoosh
+
+CSS OPTIMIZATION:
+  - Critical CSS (above-fold styles) inlined or in <head>
+  - Non-critical CSS deferred or loaded asynchronously
+  - Use CSS variables for theming and consistency
+  - Minify CSS for production
+  - Remove unused styles and consolidate rules
+
+JAVASCRIPT OPTIMIZATION:
+  - Keep JS minimal; vanilla JS preferred
+  - Load scripts with defer attribute (or at end of body)
+  - Minify and bundle if using multiple files
+  - No render-blocking scripts
+
+DELIVERY OPTIMIZATION:
+  - Enable gzip compression on server
+  - Leverage browser caching (cache headers)
+  - Use CDN for asset delivery (GitHub Pages, Netlify, Vercel provide this)
+  - Serve from geographically close servers (automatic with CDN)
+
+
+================================================================================
+12. SEO & METADATA
+================================================================================
+
+ON-PAGE SEO:
+  - Unique, descriptive <title> per page (50-60 characters)
+  - Meta description per page (120-160 characters)
+  - H1 tag once per page, descriptive
+  - Heading hierarchy (H1 → H2 → H3)
+  - Keyword usage in headings and early paragraphs
+
+STRUCTURED DATA:
+  - JSON-LD format for Person and Projects
+  - Schema.org markup for Experience, Education
+  - Include date, description, image, URL
+
+SITEMAP & ROBOTS:
+  - XML sitemap (sitemap.xml)
+  - robots.txt with Sitemap directive
+  - Submit to Google Search Console
+
+SOCIAL SHARING:
+  - Open Graph tags (og:title, og:description, og:image, og:url)
+  - Twitter Card tags (twitter:card, twitter:title, twitter:description, twitter:image)
+  - Include social preview image (1200x630px recommended)
+
+DOMAIN & LINK:
+  - Canonical URL tags to prevent duplicate indexing
+  - Internal linking between related pages
+  - Outbound links to authoritative sources
+
+
+================================================================================
+13. ANALYTICS & MONITORING
+================================================================================
+
+ANALYTICS TOOL:
+  - Lightweight option: Plausible, Fathom Analytics (privacy-friendly)
+  - Alternative: Google Analytics 4
+  - Track page views, click events, form submissions
+  - Monitor bounce rate, time on page, traffic sources
+
+MONITORING:
+  - Uptime monitoring: Statuspage.io or UptimeRobot
+  - Error tracking: Sentry (basic plan free)
+  - Performance monitoring: Google PageSpeed Insights, WebPageTest
+  - Monthly review of metrics and improvement opportunities
+
+
+================================================================================
+14. SECURITY & PRIVACY
+================================================================================
+
+HTTPS:
+  - Enforce HTTPS (automatic with GitHub Pages, Netlify, Vercel)
+  - HSTS header if possible
+
+PRIVACY:
+  - Privacy Policy page (if using forms, analytics, cookies)
+  - Disclose analytics collection
+  - Specify third-party services and data handling
+  - GDPR compliance if serving EU traffic
+
+CONTACT FORM:
+  - Use Formspree, Netlify Forms, or endpoint-less service
+  - Avoid storing PII without explicit consent
+  - Clear data retention policy
+
+CONTENT SECURITY:
+  - Sanitize user inputs (if any form submission)
+  - No inline event handlers; use external event listeners
+  - Content Security Policy (CSP) header (optional)
+
+
+================================================================================
+15. TECHNICAL STACK & TOOLS
+================================================================================
+
+MARKUP & STYLING:
+  - HTML5 (semantic, valid)
+  - CSS3 (Flexbox, Grid, variables)
+  - No CSS frameworks (vanilla CSS or light utility CSS)
+
+JAVASCRIPT:
+  - Vanilla JS (no jQuery, React, Vue unless needed)
+  - Minimal interactivity: smooth scroll, navigation toggle, form validation
+  - Optional libraries: Intersection Observer for lazy loading
+
+DEVELOPMENT TOOLS:
+  - Code editor: VS Code
+  - Version control: Git, GitHub
+  - Build pipeline: Optional (11ty, Eleventy for static generation)
+  - Deployment: GitHub Actions (optional CI/CD)
+
+HOSTING & HOSTING:
+  - Primary: GitHub Pages (free, included with repo)
+  - Alternatives: Netlify, Vercel (both free with git integration)
+  - Custom domain: point to GitHub Pages DNS
+
+ASSET MANAGEMENT:
+  - /images/ directory for photos, icons, screenshots
+  - /css/ for stylesheets
+  - /js/ for scripts
+  - Monolithic layout (no complex bundling) for simplicity
+
+
+================================================================================
+16. DELIVERABLES
+================================================================================
+
+PHASE 1 - MVP (Week 1-2):
+  ✓ index.html (home page with hero, featured projects, CTA)
+  ✓ about.html (bio, skills, timeline)
+  ✓ projects.html (portfolio grid with 6-8 projects)
+  ✓ resume.html (CV summary with PDF link)
+  ✓ contact.html (contact methods and optional form)
+  ✓ 404.html (error page)
+  ✓ css/style.css (complete responsive stylesheet)
+  ✓ images/ directory with optimized assets
+  ✓ sitemap.xml and robots.txt
+  ✓ Deployed to GitHub Pages
+
+PHASE 2 - Polish (Week 3):
+  - Performance optimization (images, CSS, JS)
+  - Accessibility audit and WCAG fixes
+  - SEO refinement (meta tags, structured data)
+  - Analytics setup
+  - Blog structure (optional)
+
+PHASE 3 - Enhancement (Week 4+):
+  - Blog content and RSS feed
+  - Dark mode support
+  - Advanced analytics
+  - CMS integration (Netlify CMS, etc.)
+
+
+================================================================================
+17. TIMELINE & ESTIMATES
+================================================================================
+
+OUTLINING & CONTENT GATHERING:    1 day
+  - Compile bio, projects, resume info
+  - Collect/create images and descriptions
+  - Define site structure and content
+
+HTML & CSS SCAFFOLD:              2 days
+  - Set up responsive grid and layout
+  - Implement color scheme and typography
+  - Create all page templates
+
+CONTENT POPULATION:               1-2 days
+  - Write copy for home, about, projects
+  - Optimize and place images
+  - Link projects and resume
+
+ACCESSIBILITY & PERFORMANCE:      1 day
+  - Run WCAG audit, fix issues
+  - Optimize images and CSS
+  - Test on mobile devices
+
+QA & DEPLOYMENT:                  0.5-1 day
+  - Cross-browser testing (Chrome, Firefox, Safari, Edge)
+  - Mobile testing (iOS, Android)
+  - Deploy to GitHub Pages
+  - Test live site
+
+TOTAL: 5.5-7 working days
+
+
+================================================================================
+18. ACCEPTANCE CRITERIA
+================================================================================
+
+FUNCTIONALITY:
+  ✓ All 6 main pages render without errors
+  ✓ Navigation works on all pages (links to all sections)
+  ✓ Contact links (email, phone, social) are functional
+  ✓ Project links point to live/demo and GitHub repos
+  ✓ Resume PDF downloads without errors
+
+DESIGN & UX:
+  ✓ Layout is responsive and looks good on mobile (320px) and desktop (1440px)
+  ✓ Typography is readable; font sizes scale appropriately
+  ✓ Spacing and alignment are consistent throughout
+  ✓ Color scheme is cohesive; text contrast meets WCAG AA
+
+PERFORMANCE:
+  ✓ Lighthouse score >= 95 for Performance
+  ✓ First Contentful Paint < 1.5s on 4G emulation
+  ✓ All images are optimized (< 100KB per image)
+  ✓ No render-blocking resources (CSS/JS)
+
+ACCESSIBILITY:
+  ✓ Passes WCAG 2.1 AA automated checks
+  ✓ Keyboard navigation works on all pages
+  ✓ All images have descriptive alt text
+  ✓ Form labels properly associated
+  ✓ Focus states visible
+
+SEO:
+  ✓ Unique title and meta description on each page
+  ✓ Sitemap.xml is valid and includes all pages
+  ✓ robots.txt is present and correct
+  ✓ JSON-LD structured data for person and projects
+  ✓ Open Graph and Twitter Card tags present
+
+DEPLOYMENT:
+  ✓ Site deploys without errors to GitHub Pages
+  ✓ Custom domain resolves correctly (if configured)
+  ✓ HTTPS is enforced
+  ✓ All assets load correctly in production
+
+CONTENT:
+  ✓ No placeholder text (except optional "Coming Soon" sections)
+  ✓ All projects have descriptions and links
+  ✓ Resume PDF is up-to-date and professional
+  ✓ Contact information is accurate and complete
+
+
+================================================================================
+19. RISKS & MITIGATION
+================================================================================
+
+RISK 1: Content delays
+  Severity: Medium
+  Mitigation:
+    - Start with outline and placeholder content early
+    - Implement iterative content updates post-launch
+    - Use template copy and refine over time
+
+RISK 2: Large, unoptimized images slowing load
+  Severity: High
+  Mitigation:
+    - Enforce image optimization pipeline before upload
+    - Use modern formats (WebP) with fallbacks
+    - Monitor Lighthouse Performance scores
+
+RISK 3: Accessibility compliance gaps
+  Severity: Medium
+  Mitigation:
+    - Use WCAG checklist during development
+    - Test with keyboard navigation and screen reader
+    - Run automated tools (axe, Lighthouse) regularly
+
+RISK 4: SEO underperformance
+  Severity: Low (not critical for MVP)
+  Mitigation:
+    - Implement structured data early
+    - Focus on unique, descriptive meta tags
+    - Build backlinks through LinkedIn, GitHub, etc.
+
+RISK 5: Mobile responsiveness issues
+  Severity: Medium
+  Mitigation:
+    - Mobile-first development approach
+    - Test on actual devices (iOS, Android)
+    - Use responsive frameworks or CSS Grid/Flexbox
+
+
+================================================================================
+20. ASSUMPTIONS & CONSTRAINTS
+================================================================================
+
+ASSUMPTIONS:
+  - Content (bio, projects, resume) will be provided by user
+  - Static hosting is acceptable (no server-side logic needed)
+  - No complex backend integrations required
+  - Site author can manually update HTML files
+  - Domain will be GitHub Pages or similar static host
+
+CONSTRAINTS:
+  - No back-end server or database
+  - No complex build process (avoid Webpack, if possible)
+  - Limited budget; prefer free hosting (GitHub Pages)
+  - Minimal third-party dependencies
+  - Must be sustainable for long-term maintenance
+
+
+================================================================================
+21. SUCCESS MEASUREMENT (Post-Launch)
+================================================================================
+
+Week 1:
+  - All pages loaded without errors
+  - 0 console errors in DevTools
+  - Mobile responsiveness verified
+
+Month 1:
+  - Lighthouse score >= 95 maintained
+  - No broken links detected
+  - Analytics showing traffic and engagement
+  - 10+ project page views
+
+Month 3:
+  - Organic search traffic for name
+  - Indexed in Google Search
+  - Contact inquiries / leads from site
+  - 100+ monthly unique visitors
+
+
+================================================================================
+22. GLOSSARY
+================================================================================
+
+CMS: Content Management System (optional tool for non-technical updates)
+CSS: Cascading Style Sheets (styling language)
+DevOps: Development and Operations (deployment, CI/CD)
+FCP: First Contentful Paint (performance metric)
+HTML: HyperText Markup Language (markup language)
+JSON-LD: JSON for Linking Data (structured data format)
+MVP: Minimum Viable Product (Phase 1 deliverables)
+SEO: Search Engine Optimization
+WCAG: Web Content Accessibility Guidelines
+CDN: Content Delivery Network
+
+
+================================================================================
+DOCUMENT CONTROL
+================================================================================
+
+Project: Personal Website (HTML-based)
+Version: 1.0
+Last Updated: February 27, 2026
+Next Review: Post-MVP (after initial launch)
+Status: Active Development
+
+Changes:
+  v1.0 - Initial PRD created with full scope definition
+
+
+================================================================================
+END OF DOCUMENT
+================================================================================

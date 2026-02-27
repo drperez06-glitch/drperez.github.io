@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch - contact form and social links.">
+  <title>Contact | Dr. Perez</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <a href="/">Dr. Perez</a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <h1>Get in Touch</h1>
+      <p>I'd love to hear from you. Whether you have a question, a project idea, or just want to connect – feel free to reach out!</p>
+    </section>
+
+    <section style="max-width: 600px; margin: 0 auto var(--spacing-xl);">
+      <h2>Contact Me</h2>
+      
+      <div style="background: white; padding: var(--spacing-lg); border-radius: 8px; border: 1px solid var(--color-border); margin-bottom: var(--spacing-lg);">
+        <h3 style="margin-top: 0;">Quick Links</h3>
+        <ul style="list-style: none; margin-left: 0;">
+          <li style="margin-bottom: var(--spacing-sm);">
+            <strong>Email:</strong> <a href="mailto:contact@example.com">contact@example.com</a>
+          </li>
+          <li style="margin-bottom: var(--spacing-sm);">
+            <strong>Phone:</strong> <a href="tel:+15551234567">(555) 123-4567</a>
+          </li>
+          <li style="margin-bottom: var(--spacing-sm);">
+            <strong>Location:</strong> San Francisco, CA
+          </li>
+        </ul>
+      </div>
+
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style="background: white; padding: var(--spacing-lg); border-radius: 8px; border: 1px solid var(--color-border);">
+        <h3 style="margin-top: 0;">Send a Message</h3>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="border: none; cursor: pointer; width: 100%; text-align: center;">Send Message</button>
+      </form>
+
+      <div style="margin-top: var(--spacing-lg); text-align: center;">
+        <h3>Follow Me</h3>
+        <div class="social-links" style="font-size: 1rem;">
+          <a href="https://github.com" target="_blank">GitHub</a>
+          <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+          <a href="https://twitter.com" target="_blank">Twitter</a>
+          <a href="https://codepen.io" target="_blank">CodePen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="mailto:contact@example.com">Email</a>
+      </div>
+      <p>&copy; 2026 Dr. Perez. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
