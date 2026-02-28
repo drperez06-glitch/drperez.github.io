@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Dr. Perez - Software engineer, thinker, and problem solver. Portfolio, projects, and contact.">
-  <meta name="theme-color" content="#0f1117">
-  <title>Dr. Perez - Software Engineer</title>
+  <meta name="description" content="Personal website - portfolio, projects, and contact.">
+  <meta name="theme-color" content="#0066cc">
+  <title>Home | Dr. Perez</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -14,14 +14,9 @@
       <div class="logo">
         <a href="/">Dr. Perez</a>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <nav id="main-nav">
+      <nav>
         <ul>
-          <li><a href="/" class="active">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
@@ -32,8 +27,8 @@
   </header>
 
   <main>
-    <section class="hero fade-in">
-      <img src="images/avatar.jpg" alt="Dr. Perez profile photo" class="hero-image">
+    <section class="hero">
+      <img src="images/avatar.jpg" alt="Profile picture" class="hero-image">
       <h1>Welcome to my corner of the web</h1>
       <p>Software engineer, thinker, and problem solver.</p>
       <div class="cta-section">
@@ -42,12 +37,12 @@
       </div>
     </section>
 
-    <section class="fade-in">
+    <section>
       <h2>Featured Projects</h2>
       <p>A selection of recent work and side projects.</p>
       <div class="grid grid-3">
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f1117 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
           <div class="card-content">
             <h3>Project Alpha</h3>
             <p>An innovative solution for real-time data processing.</p>
@@ -55,12 +50,12 @@
               <span class="tag">Python</span>
               <span class="tag">React</span>
             </div>
-            <a href="projects.html">Learn more &rarr;</a>
+            <a href="projects.html">Learn more →</a>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #2d1b4e 0%, #0f1117 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
           <div class="card-content">
             <h3>Project Beta</h3>
             <p>Mobile-first web app for productivity and collaboration.</p>
@@ -68,12 +63,12 @@
               <span class="tag">JavaScript</span>
               <span class="tag">Node.js</span>
             </div>
-            <a href="projects.html">Learn more &rarr;</a>
+            <a href="projects.html">Learn more →</a>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #0d3b3b 0%, #0f1117 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
           <div class="card-content">
             <h3>Project Gamma</h3>
             <p>AI-powered tool for intelligent content analysis.</p>
@@ -81,54 +76,29 @@
               <span class="tag">ML</span>
               <span class="tag">Python</span>
             </div>
-            <a href="projects.html">Learn more &rarr;</a>
+            <a href="projects.html">Learn more →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="fade-in">
+    <section>
       <h2>About Me</h2>
       <p>I'm a passionate full-stack developer with a background in research and open-source contributions. I love building tools that solve real problems.</p>
-      <p><a href="about.html">Read more about my background &rarr;</a></p>
+      <p><a href="about.html">Read more about my background →</a></p>
     </section>
   </main>
 
   <footer>
     <div class="footer-content">
       <div class="social-links">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://github.com" target="_blank">GitHub</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank">Twitter</a>
         <a href="mailto:contact@example.com">Email</a>
       </div>
       <p>&copy; 2026 Dr. Perez. All rights reserved.</p>
     </div>
   </footer>
-
-  <script>
-    // Mobile nav toggle
-    const toggle = document.querySelector('.nav-toggle');
-    const nav = document.getElementById('main-nav');
-    if (toggle && nav) {
-      toggle.addEventListener('click', () => {
-        const open = toggle.classList.toggle('open');
-        nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open);
-      });
-    }
-
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
