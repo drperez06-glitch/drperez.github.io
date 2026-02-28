@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Resume and CV - Dr. Perez.">
+  <meta name="description" content="Resume and CV for Dr. Perez - Full Stack Software Engineer.">
+  <meta name="theme-color" content="#0f1117">
   <title>Resume | Dr. Perez</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,12 +14,17 @@
       <div class="logo">
         <a href="/">Dr. Perez</a>
       </div>
-      <nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-nav">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="resume.html">Resume</a></li>
+          <li><a href="resume.html" class="active">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -26,31 +32,31 @@
   </header>
 
   <main>
-    <section>
-      <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: var(--spacing-lg);">
+    <section class="fade-in">
+      <div class="resume-header">
         <div>
           <h1>Dr. Perez</h1>
-          <p>Full Stack Software Engineer | <a href="mailto:contact@example.com">contact@example.com</a> | (555) 123-4567</p>
+          <p>Full Stack Software Engineer &middot; <a href="mailto:contact@example.com">contact@example.com</a> &middot; (555) 123-4567</p>
         </div>
-        <div style="text-align: right;">
-          <p><a href="resume.pdf" download="Dr-Perez-Resume.pdf" class="btn">Download PDF</a></p>
+        <div>
+          <a href="resume.pdf" download="Dr-Perez-Resume.pdf" class="btn">Download PDF</a>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Professional Summary</h2>
       <p>Experienced full-stack software engineer with 5+ years of expertise in building scalable web applications and leading cross-functional teams. Proven track record of delivering high-impact projects using modern technologies and best practices. Strong foundation in computer science with a focus on clean architecture, performance optimization, and user-centered design.</p>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Experience</h2>
       <ul class="timeline">
         <li class="timeline-item">
           <h4>Senior Software Engineer</h4>
-          <div class="date">TechCorp Inc. • 2023 – Present</div>
+          <div class="date">TechCorp Inc. &middot; 2023 &ndash; Present</div>
           <p>Leading the development of core platform services used by 50k+ users. Architected and deployed microservices infrastructure resulting in 40% performance improvement.</p>
-          <ul style="margin-left: var(--spacing-lg); margin-top: var(--spacing-sm);">
+          <ul>
             <li>Mentored 3 junior engineers on best practices and code quality</li>
             <li>Reduced API response time from 2s to 200ms through optimization</li>
             <li>Led migration from monolithic to microservices architecture</li>
@@ -59,9 +65,9 @@
 
         <li class="timeline-item">
           <h4>Full Stack Developer</h4>
-          <div class="date">StartupXYZ • 2020 – 2023</div>
+          <div class="date">StartupXYZ &middot; 2020 &ndash; 2023</div>
           <p>Built and maintained multiple production applications serving millions of requests daily. Worked across the full development stack from database design to frontend UI.</p>
-          <ul style="margin-left: var(--spacing-lg); margin-top: var(--spacing-sm);">
+          <ul>
             <li>Developed React components achieving 95+ Lighthouse score</li>
             <li>Implemented real-time features using WebSockets and Redis</li>
             <li>Established CI/CD pipelines reducing deployment time by 60%</li>
@@ -70,9 +76,9 @@
 
         <li class="timeline-item">
           <h4>Junior Developer</h4>
-          <div class="date">WebAgency Co. • 2018 – 2020</div>
+          <div class="date">WebAgency Co. &middot; 2018 &ndash; 2020</div>
           <p>Started career building client websites and custom web applications. Rapidly gained full-stack expertise through mentorship and exposure to diverse projects.</p>
-          <ul style="margin-left: var(--spacing-lg); margin-top: var(--spacing-sm);">
+          <ul>
             <li>Developed 20+ client projects using HTML, CSS, JavaScript, and PHP</li>
             <li>Improved code quality through implementing testing practices</li>
             <li>Collaborated with designers on responsive UI implementation</li>
@@ -81,49 +87,69 @@
       </ul>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Skills</h2>
       <div class="about-grid">
-        <div>
+        <div class="skill-group">
           <h4>Languages</h4>
-          <p>Python, JavaScript/TypeScript, Java, SQL, HTML5, CSS3</p>
+          <ul class="skill-list">
+            <li>Python</li>
+            <li>JavaScript / TypeScript</li>
+            <li>Java</li>
+            <li>SQL, HTML5, CSS3</li>
+          </ul>
         </div>
-        <div>
+        <div class="skill-group">
           <h4>Frontend</h4>
-          <p>React, Vue.js, Webpack, CSS-in-JS, Web Performance, Accessibility</p>
+          <ul class="skill-list">
+            <li>React</li>
+            <li>Vue.js</li>
+            <li>Webpack, CSS-in-JS</li>
+            <li>Accessibility</li>
+          </ul>
         </div>
-        <div>
+        <div class="skill-group">
           <h4>Backend</h4>
-          <p>Node.js, Django, FastAPI, PostgreSQL, MongoDB, REST APIs</p>
+          <ul class="skill-list">
+            <li>Node.js</li>
+            <li>Django, FastAPI</li>
+            <li>PostgreSQL, MongoDB</li>
+            <li>REST APIs</li>
+          </ul>
         </div>
-        <div>
+        <div class="skill-group">
           <h4>DevOps & Tools</h4>
-          <p>Docker, AWS, Kubernetes, Git, GitHub, Jenkins, Terraform</p>
+          <ul class="skill-list">
+            <li>Docker</li>
+            <li>AWS, Kubernetes</li>
+            <li>Git, GitHub, Jenkins</li>
+            <li>Terraform</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Education</h2>
       <ul class="timeline">
         <li class="timeline-item">
           <h4>BS in Computer Science</h4>
-          <div class="date">University Name • 2014 – 2018</div>
+          <div class="date">University Name &middot; 2014 &ndash; 2018</div>
           <p>Relevant coursework: Data Structures, Algorithms, Systems Design, Database Management, Machine Learning</p>
         </li>
       </ul>
     </section>
 
-    <section>
+    <section class="fade-in">
       <h2>Certifications</h2>
-      <ul style="margin-left: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
-        <li>AWS Certified Solutions Architect – Associate (2022)</li>
-        <li>Google Cloud Professional Data Engineer (2021)</li>
-        <li>Kubernetes Application Developer (2021)</li>
+      <ul style="margin-left: var(--spacing-lg); margin-bottom: var(--spacing-lg); list-style: disc;">
+        <li style="color: var(--color-text-muted); padding: 0.3rem 0;">AWS Certified Solutions Architect &ndash; Associate (2022)</li>
+        <li style="color: var(--color-text-muted); padding: 0.3rem 0;">Google Cloud Professional Data Engineer (2021)</li>
+        <li style="color: var(--color-text-muted); padding: 0.3rem 0;">Kubernetes Application Developer (2021)</li>
       </ul>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section center fade-in">
       <a href="resume.pdf" download="Dr-Perez-Resume.pdf" class="btn">Download Full Resume (PDF)</a>
     </section>
   </main>
@@ -131,13 +157,34 @@
   <footer>
     <div class="footer-content">
       <div class="social-links">
-        <a href="https://github.com" target="_blank">GitHub</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
         <a href="mailto:contact@example.com">Email</a>
       </div>
       <p>&copy; 2026 Dr. Perez. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.classList.toggle('open');
+        nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
