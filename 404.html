@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Page not found - 404 error.">
+  <meta name="theme-color" content="#0f1117">
   <title>404 Not Found | Dr. Perez</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,7 +14,12 @@
       <div class="logo">
         <a href="/">Dr. Perez</a>
       </div>
-      <nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-nav">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
@@ -26,10 +32,10 @@
   </header>
 
   <main>
-    <section style="text-align: center; padding: var(--spacing-xl) 0;">
-      <h1 style="font-size: 4rem; margin-bottom: var(--spacing-md);">404</h1>
+    <section class="error-page fade-in">
+      <h1>404</h1>
       <h2>Page Not Found</h2>
-      <p style="font-size: 1.25rem; margin-bottom: var(--spacing-lg);">Sorry, the page you're looking for doesn't exist.</p>
+      <p>Sorry, the page you're looking for doesn't exist.</p>
       <a href="/" class="btn">Back to Home</a>
     </section>
   </main>
@@ -37,13 +43,34 @@
   <footer>
     <div class="footer-content">
       <div class="social-links">
-        <a href="https://github.com" target="_blank">GitHub</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
         <a href="mailto:contact@example.com">Email</a>
       </div>
       <p>&copy; 2026 Dr. Perez. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.classList.toggle('open');
+        nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>

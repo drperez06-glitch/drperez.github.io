@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projects and portfolio - view my latest work.">
+  <meta name="description" content="Projects and portfolio by Dr. Perez - view my latest work in software engineering.">
+  <meta name="theme-color" content="#0f1117">
   <title>Projects | Dr. Perez</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -13,11 +14,16 @@
       <div class="logo">
         <a href="/">Dr. Perez</a>
       </div>
-      <nav>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-nav">
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="projects.html" class="active">Projects</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
@@ -26,15 +32,15 @@
   </header>
 
   <main>
-    <section>
+    <section class="fade-in">
       <h1>Projects</h1>
       <p>A collection of projects I've worked on, from personal experiments to professional applications.</p>
     </section>
 
-    <section>
+    <section class="fade-in">
       <div class="grid grid-2">
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #1e3a5f 0%, #0f1117 100%);"></div>
           <div class="card-content">
             <h3>Real-time Data Platform</h3>
             <p>A scalable platform for processing and visualizing streaming data. Built with Python, WebSockets, and React.</p>
@@ -44,14 +50,14 @@
               <span class="tag">WebSockets</span>
             </div>
             <p>
-              <a href="#" target="_blank">View Live</a> | 
-              <a href="https://github.com" target="_blank">GitHub</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">View Live</a> &middot;
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #2d1b4e 0%, #0f1117 100%);"></div>
           <div class="card-content">
             <h3>Task Management App</h3>
             <p>A collaborative task management tool with real-time synchronization. Features include teams, projects, and activity tracking.</p>
@@ -61,14 +67,14 @@
               <span class="tag">MongoDB</span>
             </div>
             <p>
-              <a href="#" target="_blank">View Live</a> | 
-              <a href="https://github.com" target="_blank">GitHub</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">View Live</a> &middot;
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #0d3b3b 0%, #0f1117 100%);"></div>
           <div class="card-content">
             <h3>ML Content Analyzer</h3>
             <p>An intelligent tool that analyzes and categorizes content using machine learning models. Supports multiple languages.</p>
@@ -78,14 +84,14 @@
               <span class="tag">FastAPI</span>
             </div>
             <p>
-              <a href="#" target="_blank">View Live</a> | 
-              <a href="https://github.com" target="_blank">GitHub</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">View Live</a> &middot;
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #3b1f0d 0%, #0f1117 100%);"></div>
           <div class="card-content">
             <h3>E-commerce Platform</h3>
             <p>Full-featured e-commerce platform with payment processing, inventory management, and admin dashboard.</p>
@@ -95,14 +101,14 @@
               <span class="tag">Stripe</span>
             </div>
             <p>
-              <a href="#" target="_blank">View Live</a> | 
-              <a href="https://github.com" target="_blank">GitHub</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">View Live</a> &middot;
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #1a2e1a 0%, #0f1117 100%);"></div>
           <div class="card-content">
             <h3>Analytics Dashboard</h3>
             <p>Interactive dashboard for visualizing complex analytics with real-time data. Built for performance at scale.</p>
@@ -112,14 +118,14 @@
               <span class="tag">PostgreSQL</span>
             </div>
             <p>
-              <a href="#" target="_blank">View Live</a> | 
-              <a href="https://github.com" target="_blank">GitHub</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">View Live</a> &middot;
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
         </div>
 
         <div class="card">
-          <div class="card-image" style="background: linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%);"></div>
+          <div class="card-image" style="background: linear-gradient(135deg, #2e1a2e 0%, #0f1117 100%);"></div>
           <div class="card-content">
             <h3>CLI Tool Suite</h3>
             <p>A collection of command-line tools for developers. Streamlines common development workflows and automation.</p>
@@ -129,15 +135,15 @@
               <span class="tag">Docker</span>
             </div>
             <p>
-              <a href="#" target="_blank">View Live</a> | 
-              <a href="https://github.com" target="_blank">GitHub</a>
+              <a href="#" target="_blank" rel="noopener noreferrer">View Live</a> &middot;
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta-section">
+    <section class="cta-section center fade-in">
       <h2>Let's build something amazing</h2>
       <p>Have a project in mind? I'd love to hear about it.</p>
       <a href="contact.html" class="btn">Start a Project</a>
@@ -147,13 +153,34 @@
   <footer>
     <div class="footer-content">
       <div class="social-links">
-        <a href="https://github.com" target="_blank">GitHub</a>
-        <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-        <a href="https://twitter.com" target="_blank">Twitter</a>
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
         <a href="mailto:contact@example.com">Email</a>
       </div>
       <p>&copy; 2026 Dr. Perez. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('main-nav');
+    if (toggle && nav) {
+      toggle.addEventListener('click', () => {
+        const open = toggle.classList.toggle('open');
+        nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open);
+      });
+    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
